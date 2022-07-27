@@ -6,7 +6,6 @@ clean:
 
 it:
 	cc -Wall -Wno-misleading-indentation -O3 -fomit-frame-pointer -march=native -o status.o -c status.c
-	cc -Wall -Wno-misleading-indentation -O3 -fomit-frame-pointer -march=native -o fmt.o -c fmt.c
 	cc -Wall -Wno-misleading-indentation -O3 -fomit-frame-pointer -march=native -o alloc.o -c alloc.c
 	cc -Wall -Wno-misleading-indentation -O3 -fomit-frame-pointer -march=native -o array.o -c array.c
 	cc -Wall -Wno-misleading-indentation -O3 -fomit-frame-pointer -march=native -o strerr.o -c strerr.c

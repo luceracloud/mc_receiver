@@ -67,7 +67,7 @@ static void _receive()
     if(cnt == 0) break;
 
     byte_copy(&seq, &message, 4);
-    status(seq, (char *)&ip, port);
+    status(*(unsigned int *)&message, (char *)&ip, port);
   }
 }
 

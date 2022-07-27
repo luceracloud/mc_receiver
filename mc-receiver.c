@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <stdio.h>
 
 #include "exit.h"
 #include "byte.h"

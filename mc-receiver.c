@@ -16,7 +16,7 @@
 
 static void usage(int ret)
 {
-  strerr_die1x(ret, "mc-tester: [-h] -g group -p port [-s] [-t]");
+  strerr_die1x(ret, "mc-receiver: [-h] -g group -p port [-s] [-t]");
 }
 
 static ipv4  gFlag;	/* Group Address */

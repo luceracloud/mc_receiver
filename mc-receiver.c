@@ -1,6 +1,5 @@
 #include <unistd.h>
 #include <stdio.h>
-#include <net/if.h>
 
 #include "exit.h"
 #include "byte.h"

@@ -1,10 +1,9 @@
-#include <unistd.h>
-
 #include "exit.h"
 #include "byte.h"
 #include "scan.h"
 #include "ipv4.h"
 #include "socket.h"
+#include "getopt.h"
 #include "strerr.h"
 #include "status.h"
 #include "array.h"

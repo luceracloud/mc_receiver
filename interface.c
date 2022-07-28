@@ -5,6 +5,7 @@
 #include "byte.h"
 #include "str.h"
 #include "scan.h"
+#include "array.h"
 #include "slurpclose.h"
 #include <net/if.h>
 

@@ -66,21 +66,6 @@ int array_push0(array *a, unsigned int len)
   return 1;
 }
 
-unsigned int array_len(array *a, unsigned int len)
-{
-  return a->l / len;
-}
-
-int array_cats(array *a, char *obj)
-{
-  return array_push(a,obj,str_len(obj));
-}
-
-int array_cat0(array *a)
-{
-  return array_push0(a,sizeof(char));
-}
-
 int array_copyb(array *a, char *s, unsigned int l)
 {
   if(!array_rdy(a,l)) return 0;

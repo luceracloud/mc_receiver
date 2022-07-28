@@ -1,19 +1,6 @@
 #include "alloc.h"
 #include "byte.h"
 
-extern void *malloc();
-extern void free();
-
-void *alloc(unsigned int n)
-{
-  return malloc((long unsigned int)n);
-}
-
-void alloc_free(void *x)
-{
-  if(x) free(x);
-}
-
 int alloc_re(void **x, unsigned int m, unsigned int n)
 {
   void *y;

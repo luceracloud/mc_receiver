@@ -73,8 +73,3 @@ int array_copyb(array *a, char *s, unsigned int l)
   a->l = l;
   return 1;
 }
-
-int array_copys(array *a, char *s)
-{
-  return array_copyb(a,s,str_len(s));
-}

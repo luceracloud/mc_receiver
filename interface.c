@@ -7,7 +7,6 @@
 #include "scan.h"
 #include "array.h"
 #include "slurpclose.h"
-#include <net/if.h>
 
 array data;
 
@@ -29,6 +28,8 @@ static int get1(char *name)
   if(!scan_ulong(&u, data.x)) return 0;
   return (u != 1);
 }
+
+#include <net/if.h>
 
 int interface_get_rpfilter_values(array *a)
 {

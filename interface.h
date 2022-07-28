@@ -3,6 +3,6 @@
 
 #include "array.h"
 
-extern void interface_get_rpfilter_values(array *);
+extern int interface_get_rpfilter_values(array *);
 
 #endif

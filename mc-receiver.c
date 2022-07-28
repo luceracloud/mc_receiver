@@ -72,7 +72,7 @@ static void _receive()
 
 static void test() {
   array a = {0}, b = {0};
-  interface_get_rpfilter_values(&a);
+  if(!interface_get_rpfilter_values(&a)) strerr_die1x(111, "Failure getting interfaces");
   strerr_warn1x("Interfaces which have rp_filter set:");
   while(array_pop(&a, &b, sizeof(array)))
     strerr_warn2x("\t", (char *)b.x);

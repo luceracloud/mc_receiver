@@ -1,8 +1,24 @@
 #include "array.h"
 #include "alloc.h"
 #include "byte.h"
+#include "str.h"
 
-static int array_rdypls(array *a, unsigned int len)
+int array_rdy(array *a, unsigned int len)
+{
+  if(a->x){
+    if(a->a < len){
+      if(!alloc_re(&a->x, a->l, len)) return 0;
+      a->a = len;
+    }
+    return 1;
+  }
+  if(!(a->x = alloc(len))) return 0;
+  a->l = 0;
+  a->a = len;
+  return 1;
+}
+
+int array_rdypls(array *a, unsigned int len)
 {
   if(a->x){
     unsigned int n;
@@ -12,8 +28,7 @@ static int array_rdypls(array *a, unsigned int len)
     }
     return 1;
   }
-  a->x = alloc(len);
-  if(!a->x) return 0;
+  if(!(a->x = alloc(len))) return 0;
   a->l = 0;
   a->a = len;
   return 1;
@@ -54,4 +69,27 @@ int array_push0(array *a, unsigned int len)
 unsigned int array_len(array *a, unsigned int len)
 {
   return a->l / len;
+}
+
+int array_cats(array *a, char *obj)
+{
+  return array_push(a,obj,str_len(obj));
+}
+
+int array_cat0(array *a)
+{
+  return array_push0(a,sizeof(char));
+}
+
+int array_copyb(array *a, char *s, unsigned int l)
+{
+  if(!array_rdy(a,l)) return 0;
+  byte_copy(a->x, s, l);
+  a->l = l;
+  return 1;
+}
+
+int array_copys(array *a, char *s)
+{
+  return array_copyb(a,s,str_len(s));
 }
